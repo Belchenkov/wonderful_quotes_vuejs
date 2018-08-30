@@ -1,6 +1,5 @@
 <template>
-    <div v-if="quoteCount">
-      <h3>Количество цитат</h3>
+    <div v-if="quoteCount" class="mt-4">
       <div class="progress">
         <div
           :style="{width: (quoteCount/maxQuotes) * 100 + '%' }"

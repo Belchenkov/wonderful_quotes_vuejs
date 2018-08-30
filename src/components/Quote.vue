@@ -15,7 +15,7 @@
   @import url('https://fonts.googleapis.com/css?family=Marck+Script&subset=cyrillic');
   .card-body {
     font-family: 'Marck Script', cursive;
-    font-size: 27px;
+    font-size: 23px;
     color: #6e6e6e;
   }
 

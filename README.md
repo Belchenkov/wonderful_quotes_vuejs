@@ -1,6 +1,10 @@
 # Wonderful Quotes Vue.js Application
 
-## Vue 2
+### Demo http://185.228.232.41/projects/wonderfulQuotes/
+
+## Vue 2, Bootstrap 4
+
+
 
 ## Build Setup
 
