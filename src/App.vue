@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <app-header></app-header>
+    <app-header
+      :quoteCount="quotes.length"
+      :maxQuotes="maxQuotes"
+    ></app-header>
     <app-new-quote
       @quoteAdded="newQuote"
     ></app-new-quote>
@@ -39,6 +42,10 @@
   methods: {
     newQuote (quote) {
       if (!!quote) {
+        if (this.quotes.length >= this.maxQuotes) {
+          return alert('Сначало, удалите цитату!');
+        }
+
         this.quotes.push(quote);
       }
     },
