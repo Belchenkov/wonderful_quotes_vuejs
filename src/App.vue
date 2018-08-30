@@ -1,23 +1,47 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div class="container">
+    <app-new-quote
+      @quoteAdded="newQuote"
+    ></app-new-quote>
+    <app-quote-grid
+      :quotes="quotes"
+    ></app-quote-grid>
+    <div class="row">
+      <div class="col-sm-12 text-center mt-5">
+        <div class="alert alert-info">Кликните на цитату, чтобы удалить!</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
+  import QuoteGrid from './components/QuoteGrid';
+  import NewQuote from './components/NewQuote';
+
+  export default {
+  data() {
+    return {
+      quotes: [
+        'Первая цитата',
+        'Вторая цитата'
+      ],
+      maxQuotes: 10
+    }
+  },
+  components: {
+    appQuoteGrid: QuoteGrid,
+    appNewQuote: NewQuote,
+  },
+  methods: {
+    newQuote (quote) {
+      if (!!quote) {
+        this.quotes.push(quote);
+      }
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
