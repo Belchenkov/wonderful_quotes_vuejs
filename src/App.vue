@@ -5,8 +5,9 @@
     ></app-new-quote>
     <app-quote-grid
       :quotes="quotes"
+      @quoteDeleted="deleteQuote"
     ></app-quote-grid>
-    <div class="row">
+    <div class="row" v-if="!!quotes">
       <div class="col-sm-12 text-center mt-5">
         <div class="alert alert-info">Кликните на цитату, чтобы удалить!</div>
       </div>
@@ -37,6 +38,9 @@
       if (!!quote) {
         this.quotes.push(quote);
       }
+    },
+    deleteQuote (index) {
+      this.quotes.splice(index, 1);
     }
   }
 }
